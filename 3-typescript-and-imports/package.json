@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
+    "dev": "rollup -c -w",
     "ssr": "node scripts/ssr-server.js",
-    "dev": "rollup -c -w"
+    "ssr-build": "rollup --config rollup.ssr.config.js"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^16.0.0",

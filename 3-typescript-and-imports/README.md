@@ -1,4 +1,4 @@
-# Basic SSR
+# Typescript and Imports
 
 View the full guide [here](https://www.base2.io/2020/12/12/svelte-ssr).
 
@@ -10,4 +10,4 @@ Install dependencies with `yarn install`.
 
 Start the client-side development server with `yarn dev`.
 
-Start the Express server-side rendering demo with `yarn ssr`.
+Build the server-side component with `yarn ssr-build`, then start the Express server-side rendering demo with `yarn ssr`.

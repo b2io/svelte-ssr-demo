@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
+    "ssr": "node scripts/ssr-server.js",
     "dev": "rollup -c -w"
   },
   "devDependencies": {
