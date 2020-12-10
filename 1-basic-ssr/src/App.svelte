@@ -7,7 +7,7 @@
 </script>
 
 <main>
-	{#if recipes == null}
+	{#if recipes === null}
 		<div>Loading...</div>
 	{:else}
 	<ul>

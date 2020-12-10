@@ -3,15 +3,13 @@
 
 	let showIngredients = false
 
-	$: {
-		!recipes && fetch("http://localhost:8080/api/")
-			.then((response) => response.json())
-			.then((json) => (recipes = json.results));
-	}
+	!recipes && fetch("http://localhost:8080/api/")
+		.then((response) => response.json())
+		.then((json) => (recipes = json.results));
 </script>
 
 <main>
-	{#if recipes == null}
+	{#if recipes === null}
 		<div>Loading...</div>
 	{:else}
 		<label>
