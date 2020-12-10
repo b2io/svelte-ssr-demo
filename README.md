@@ -1,6 +1,6 @@
 # Svelte SSR Demo
 
-This repository contains the full examples for the Svelte SSR guide [here].
+This repository contains the full examples for the Svelte SSR guide [here](https://www.base2.io/2020/12/12/svelte-ssr).
 
 Each folder contains a standalone project for a separate step of the guide.
 
