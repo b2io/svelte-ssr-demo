@@ -1,4 +1,6 @@
 const App = require("../public/build/ssr.js")
+function nocache(module) {require("fs").watchFile(require("path").resolve(module), () => {delete require.cache[require.resolve(module)]})}
+nocache('../public/build/ssr.js')
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
