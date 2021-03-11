@@ -4,7 +4,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "ssr": "node scripts/ssr-server.js",
+    "ssr": "node ssr-server.js",
     "ssr-build": "rollup --config rollup.ssr.config.js"
   },
   "devDependencies": {
