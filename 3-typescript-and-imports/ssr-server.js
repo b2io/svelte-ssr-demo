@@ -1,9 +1,17 @@
-const App = require("../public/build/ssr.js")
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
 const app = express();
+
+const appPath = './public/build/ssr.js';
+let App = require(appPath);
+
+// Reload the app if the SSR bundle changes
+fs.watch(appPath, () => {
+  delete require.cache[require.resolve(appPath)]
+  App = require(appPath)
+})
 
 const options = {
   hostname: 'www.recipepuppy.com',
@@ -13,7 +21,7 @@ const options = {
 }
 
 const indexContent = fs.readFileSync(
-  path.resolve(__dirname, "..", "public", "index.html")
+  path.resolve(__dirname, "public", "index.html")
 );
 
 console.log("Starting the server...");
@@ -27,11 +35,12 @@ const req = http.request(options, res => {
 
   res.on('end', () => {
     const recipes = JSON.parse(data).results;
-    const { html, css } = App.render({
-      recipes
-    });
-
+    
     app.get('/', (_, res) => {
+      const { html, css } = App.render({
+        recipes
+      });
+
       res.send(
         indexContent
           .toString()
